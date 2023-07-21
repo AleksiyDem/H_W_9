@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document Array</title>
+</head>
+
+<body>
+
+
+
+
+	<h1>Домашне завдання Урок № 9 Array</h1>
+
+	<ol>
+		<li> <a href="./index1.html">Задача 1</a> </li>
+		<p>
+		</p>
+
+		<li> <a href="./index2.html">Задача 2</a> </li>
+		<p>
+		</p>
+		<li> <a href="./index3.html">Задача 3</a> </li>
+		<p>
+
+		</p>
+		<li> <a href="./index4.html">Задача 4</a> </li>
+		<p>
+
+		</p>
+		<li> <a href="./index5.html">Задача 5</a> </li>
+		<p>
+
+		</p>
+		<li> <a href="./index6.html">Задача 6</a> </li>
+		<p>
+		</p>
+		<li> <a href="./index7.html">Задача 7</a> </li>
+		<p>
+
+		</p>
+		<li> <a href="./index8.html">Задача 8</a> </li>
+
+		</p>
+		<li> <a href="./index9.html">Задача 9</a> </li>
+		<p>
+
+
+	</ol>
+
+
+	<script>
+
+		// // дано масив містіть оцінки знайти середний бал і до кого відносится відміник або трійочник 
+
+		// function getMinFromArray(arr) {
+		// 	let min = arr[0]
+		// 	for (let i = 1; i < arr.length; i++) {
+		// 		if (min > arr[i]) min = arr[i]
+
+		// 	}
+		// 	return min
+		// }
+		// // 1 Функція знаходимо мін значення з масиву
+		// function getMinFromArray(arr) {
+		// 	let min = arr[0]
+		// 	for (let i = 1; i < arr.length; i++) {
+		// 		if (min > arr[i]) min = arr[i]
+
+		// 	}
+		// 	return min
+		// }
+
+		// // до якої категорій належать оцінки студента
+
+		// function getStudentCategory(score) {
+		// 	let category
+		// 	switch (getMinFromArray(score)) {
+		// 		case 1:
+		// 		case 2: category = 'Двійочник'
+		// 			break;
+		// 		case 3: category = 'Трійочник'
+		// 			break;
+		// 		case 4: category = 'Хорошіст'
+		// 			break;
+		// 		case 5: category = 'Відміник'
+		// 			break;
+		// 		default: throw new Error("Не коректна оцінка")
+		// 			break;
+		// 	}
+		// 	return category
+		// }
+		// let score = [2, 4, 5, 4, 4, 3, 4]
+		// let studentCategory = getStudentCategory(score)
+		// document.write(studentCategory)
+
+
+		//------------------------------------------------------------------------------
+
+
+		// Задача 7. Створити функцію, яка випадковим чином виводить на екран одне із 4 зображень (шляхи до зображень передаються у функцію)
+		// розвязок без масивів
+		// function getImg(img1, img2, img3, img4) {
+
+		// 	let randomImg = 1 + Math.floor(Math.random() * 4)
+		// 	let result
+		// 	switch (randomImg) {
+		// 		case 1: result = img1
+
+		// 			break;
+		// 		case 2: result = img2
+
+		// 			break;
+		// 		case 3: result = img3
+
+		// 			break;
+		// 		case 4: result = img4
+
+		// 			break;
+
+		// 	}
+
+
+		// 	return result
+
+		// }
+		// let img = getImg('https://cdn.pixabay.com/photo/2013/07/18/10/56/smiley-163510_640.jpg, https://cdn.pixabay.com/photo/2016/08/22/11/00/emoticon-1611718_640.png , https://cdn.pixabay.com/photo/2016/08/21/19/27/emoticon-1610573_640.png')
+
+		// document.write(`<img src="${img}" width="30px"/>`)
+
+		// with array
+
+		//================ with array ===================================================
+		//Задача 7. Створити функцію, яка випадковим чином виводить на екран одне із 4 зображень (шляхи до зображень передаються у функцію)
+		// розвязок без масивів
+
+		// function getImgRandom(imgList) {
+		// 	let randomImg = 0 + Math.floor(Math.random() * (3 - 0 + 1))
+		// 	return imgList[randomImg]
+
+		// }
+
+
+
+
+
+		// let imgList = ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFV_X03WGMGjw4Ha7bwvD87wFOB9K7dSE1rg&usqp=CAU',
+
+		// 	'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-7Sikw1b8e3lEw1SlZFljyX_u8MEBirlFIg&usqp=CAU',
+
+		// 	'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWjQY0g4mXS11DSuE6VXIjDEN7iI4cXSGEiw&usqp=CAU',
+
+		// 	'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU7tuxDm9WCk3Z_Z3rWB6Wm5fLkwg-tuA2OQ&usqp=CAU']
+
+		// let result = getImgRandom(imgList)
+		// document.write(`<img src="${result}" width="20px">`)
+
+		//Задача 9. Морський бій. Користувач вводить кількість клітинок одновимірного масиву та кількість одиночних кораблів. Комп’ютер довільно розміщує ці одиночні кораблі у масиві по один у клітинці (якщо у клітинці 0, то клітинка пуста, якщо 1 – то це означає, що там є корабель. Користувач вводить номер клітинки, куди стріляє. Гра продовжується до тих пір, поки не будуть потоплені усі кораблі.
+
+		// let shipNum = parseInt(prompt('Enter the number of ship'))
+		// let cellNum = parseInt(prompt('Enter the number of cell'))
+
+
+		// function getGameTable(shipNum, cellNum) {
+		// 	// створюємо гральний стол з масиву де всі значення
+		// 	let gameTable = []
+		// 	for (let i = 0; i < cellNum; i++) {
+		// 		gameTable.push(0)
+
+		// 	}
+		// 	// розміщення кораблів випадковим чином у масиві гаметейбл
+		// 	for (let i = 0; i < shipNum;) {
+		// 		let randomIndex = Math.floor(Math.random() * cellNum)
+		// 		if (gameTable[randomIndex] === 0) {
+		// 			gameTable[randomIndex] = 1
+		// 			i++
+		// 		}
+
+		// 	}
+		// 	return gameTable
+		// }
+
+		// // користувач стріляє по клітинках,
+		// function playGame(shipNum, gameTable) {
+		// 	do {
+		// 		userIndex = parseInt(prompt('ввидіть клітинку для пострілу'))
+
+		// 		if (gameTable[userIndex] === 1) {
+		// 			alert('влучив')
+		// 			gameTable[userIndex] = 0
+		// 			shipNum--
+
+		// 		} else
+		// 			alert('промазав')
+
+		// 	} while (shipNum > 0);
+
+		// }
+
+		// let gameTable = getGameTable(shipNum, cellNum)
+		// document.write(gameTable)
+		// let game = playGame(shipNum, gameTable)
+		//------------------====================================================================-----------------------------
+
+
+		// let product = [] // let product = new Array()
+		// let prod1 = new Array(7) // [ , , , , , , ]
+		// let prod2 = new Array(7).fill(22) // [22,22,22,22,22,22,22]
+
+		// let arr = new Array(10).fill(22, 1, 5)
+		// console.log(arr)
+
+		//let arr = new Array(10).fill(3, 0 , 5).fill(7, 5 )
+
+
+		//-------------------------for  of--(only to see !!!!!!!!)----------------------------------------------------
+
+		// let arr4 = [2, 4, 6, 5, 11]
+
+		// for (let item of arr4) {
+		// 	item *= 2
+		// 	console.log(item)
+		// }
+
+		// console.log(arr4)
+		//-----------------------------------
+		// let arr5 = [12, 10]
+		// for (let item of arr5) {
+		// 	item += 10
+		// 	alert(item)
+		// }
+
+		// --------------------------------
+
+		// виве сти тількі плюсову температуру
+
+		// let templist = [-2, 10, 14, 0, -5, 15]
+		// for (let temp of templist) {
+		// 	if (temp > 0) document.write(`${temp} <br>`)
+
+		// }
+		//-------------------------------------
+		// let tempList = [10, 4, -2, -5]
+		// for (let temp of tempList) {
+		// 	if (temp > 1)
+		// 		alert(temp)
+		// }
+		//---------------------------------------------------------------------------
+		// let price = 0
+		// let priceList = [23, 600, 45, 900]
+		// for (let price100 of priceList) {
+		// 	if (price100 >= 100)
+
+		// 		price += price100
+
+
+		// }
+
+		// document.write(`summ of price ${price} <br>`)
+		//=======================================================================================
+
+		// let tepList = [10, 4, -2, -5]
+		// for (let i = 0; i < tepList.length; i++) {
+		// 	if (tepList[i] <= 0) tepList[i] = 0
+
+		// }
+		// document.write(tepList)
+
+		//-----------------------------------------------------------------------------
+
+		// let arr7 = [2, 4, 5, 6, 7, 8]
+		// for (let i = 0; i < arr7.length; i++) {
+		// 	if (arr7[i] % 2 === 0)
+		// 		arr7[i] = 100
+		// }
+		// document.write(arr7)
+
+		// ----------------------------------------------------------------------------
+
+		// 		let score = [3, 9, 12, 10, 8]
+		// 		// find everage score of schoolboy
+		// 		function print1(scores) {
+		// 			document.write(<ul >)
+		// 				for (const item of score) {
+		// 					document.write(`
+		// <li>
+		// 		${score >= 7 ? 'високий' : 'нижче середнього'}
+
+
+		// 	</li>
+		// 			`)
+		// 				}
+		// 				document.write(</ul >)
+		// 		}
+		// 		// друга відповід
+
+		// 		function print2(scores) {
+		// 			document.write(<ul >)
+		// 				document.write(`${
+		// 					score >= 5 ? 'переводиться' : 'залишаеться, не віистачило ${5 - score} '}
+		// 				`)
+		// 				document.write(</ul >)
+		// 		}
+		// ------------------------------------------------------------------------------------------------
+		let arr = [3, 2, 5, 10, 43, 22]
+
+		arr.forEach((getSum) => document.write(`${getSum + 2}<br>`)
+
+		)
+
+		// arr.forEach((num) => document.write(`${num * num}<br>`))
+
+
+
+
+
+	</script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
